@@ -1,0 +1,462 @@
+#result-section {
+  margin-top: 2rem; /* Space between the features section and the result section */
+  padding: 1.5rem;
+  background-color: #e6f7ff; /* Light blue background color for emphasis */
+  border: 1px solid #b3d9ff; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  text-align: center; /* Center align the content */
+  display: block; /* Ensure the section is displayed */
+}
+
+#result-section h2 {
+  font-size: 1.8rem; /* Slightly larger font for the heading */
+  color: #004080; /* Dark blue color */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+#result-section p {
+  font-size: 1rem; /* Standard font size */
+  margin: 0.5rem 0; /* Space between paragraphs */
+  color: #333; /* Dark gray for text */
+}
+
+#result-section img {
+  margin-top: 1rem; /* Space above the image */
+  max-width: 100%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+/* Optional: Add responsiveness */
+@media (max-width: 768px) {
+  #result-section {
+    padding: 1rem; /* Reduce padding for smaller screens */
+    margin-top: 1rem; /* Reduce margin for better spacing */
+  }
+
+  #result-section h2 {
+    font-size: 1.5rem; /* Smaller heading font size */
+  }
+
+  #result-section p {
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+body {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background-color: #f8fcfd;
+}
+#header {
+  height: 100vh;
+  width: 100%;
+  
+  background-position: center;
+  background-size: cover;
+}
+#header .logo {
+  color: #83bed3; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+  font-size: 80px; /* Taille du texte */
+  text-transform: uppercase; /* Met le texte en majuscules */
+  letter-spacing: 3px; /* Espacement entre les lettres */
+  font-weight: 1000; /* Poids du texte */
+  margin: 0; /* Supprime les marges externes */
+  padding: 0; /* Supprime les marges internes */
+  direction: ltr; /* Force l'affichage de gauche à droite, même en arabe */
+  position: absolute; /* Positionne le logo de manière fixe dans la section */
+  top: 20px; /* Distance depuis le haut */
+  left: 20px; /* Distance depuis la gauche */
+  z-index: 200; /* S'assure que le logo reste visible au-dessus des autres éléments */
+}
+#language-selector {
+  position: absolute; /* Positionnement par rapport au parent */
+  top: 10px; /* Distance par rapport au haut de la page */
+  right: 20px; /* Distance par rapport au côté droit */
+  z-index: 100; /* Assure que le bouton reste au-dessus du contenu */
+  background-color: rgba(
+    49,
+    186,
+    240,
+    0.582
+  ); /* Couleur blanche transparente */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 5px 10px; /* Espacement interne */
+  box-shadow: 0 2px 4px rgba(49, 186, 240, 0.582); /* Ombre légère pour le style */
+  position: fixed;
+}
+
+#language-selector select {
+  border: none; /* Enlève la bordure du sélecteur */
+  background: transparent; /* Fond transparent */
+  font-size: 1rem; /* Taille du texte */
+  color: #333; /* Couleur du texte */
+  outline: none; /* Enlève le contour bleu lors de la sélection */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+#language-selector #language {
+  background-color: #87ceeb;
+}
+#language-selector select :hover {
+  color: #87ceeb;
+}
+
+#sidenav {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  height: 100vh;
+  background-color: #b0e0e6;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  overflow: hidden;
+  z-index: 2;
+}
+#sidenav ul li {
+  margin: 50px 20px;
+  list-style: none;
+}
+#sidenav ul li a {
+  color: grey;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  overflow: hidden;
+}
+#sidenav ul li a:hover {
+  color: rgb(145, 197, 240);
+}
+.content {
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: auto;
+  top: 20%;
+  overflow: visible;
+  position: absolute;
+  color: #6fa8bd;
+  margin-top: 120px;
+  margin-left: 50px;
+  font-weight: 1000;
+}
+
+#menu-botton {
+  width: 50px;
+  position: fixed;
+  right: 65px;
+  top: 35px;
+  z-index: 2;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  bottom: auto;
+  font-weight: bold;
+}
+#about-us {
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8fcfd;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+.about-left {
+  flex-basis: 50%;
+}
+.about-left #about {
+  width: 80%;
+}
+.about-left img {
+  width: 100%;
+  max-width: 500px;
+}
+.about-right {
+  flex-basis: 50%;
+  text-align: left;
+  flex: 1; /* Allow this div to grow and shrink as needed */
+}
+.content1 {
+  max-width: 500px;
+  margin-right: 100px;
+  display: inline-block;
+  color: grey;
+}
+.content1 h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.content1 p {
+  font-size: 15px;
+  line-height: 25px;
+  margin: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+#features {
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.096);
+  margin: 2rem auto;
+  max-width: 600px; /* Reduced width */
+  width: 80%; /* Adjusted width */
+  padding: 1.5rem; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#features h2 {
+  font-size: 1.6rem; /* Reduced font size */
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+form {
+  width: 100%;
+  max-width: 500px; /* Reduced form width */
+  margin: 0 auto; /* Center form */
+}
+
+.form-group {
+  margin-bottom: 0.8rem; /* Reduced space between fields */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem; /* Reduced font size for labels */
+  margin-bottom: 0.4rem;
+  color: #1d1d1d;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.6rem; /* Reduced padding */
+  font-size: 0.9rem; /* Smaller font size for inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+button[type="button"],
+button[type="submit"] {
+  background-color: #016de0;
+  color: white;
+  padding: 0.6rem 1.5rem; /* Reduced button padding */
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+  background-color: #014c9b;
+}
+
+#result {
+  margin-top: 2rem;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+/* Ajoutez ce CSS dans votre fichier CSS principal */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ltr {
+  direction: ltr;
+  text-align: left;
+}
+/* Style spécifique pour la langue arabe */
+body.rtl #about-us .about-right {
+  text-align: right; /* Alignement à droite */
+  display: flex;
+  flex-direction: column; /* Empilement vertical */
+  gap: 1rem; /* Espacement entre les lignes */
+  line-height: 1.8; /* Améliore la lisibilité */
+  font-family: "Amiri", serif; /* Une police élégante pour l'arabe (optionnel) */
+}
+
+body.rtl #about-us h1 {
+  text-align: right; /* Aligne le titre à droite */
+  margin-bottom: 1rem; /* Ajoute un espace sous le titre */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+footer {
+  background-color: #77cee9; /* Dark background color */
+  color: #e3f1fc; /* Light text color */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add some padding */
+  width: 100%; /* Full width */
+  bottom: 0; /* Align it to the bottom */
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-quote {
+  font-style: italic; /* Italicize the quote */
+  margin-top: 10px; /* Add space between copyright and quote */
+  font-size: 16px; /* Slightly larger font for the quote */
+}
+/* Réinitialisation de l'animation pour une réexécution lors du changement de langue ou du rafraîchissement */
+.fade-in {
+  opacity: 0; /* Débute avec une opacité de 0 */
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chaque élément apparait avec un délai progressif */
+.fade-in-delay {
+  animation-delay: var(--delay);
+}
+
+/* Styles pour les images */
+img {
+  opacity: 0; /* Initialement caché */
+  transition: opacity 1s ease-out;
+}
+
+img.fade-in {
+  opacity: 1;
+}
+/* Adjusting Form for Smaller Screens */
+@media (max-width: 768px) {
+  #features {
+    width: 90%; /* Make the features section wider on smaller screens */
+    max-width: none; /* Remove max-width constraint */
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.85rem; /* Make the inputs smaller on smaller screens */
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  button[type="button"],
+  button[type="submit"] {
+    padding: 0.6rem 1.5rem; /* Reduce button padding */
+    font-size: 0.9rem; /* Smaller button font size */
+  }
+
+  #features h2 {
+    font-size: 1.3rem; /* Smaller title font size */
+  }
+}
+@media (max-width: 768px) {
+  #features {
+    width: 100%;
+  }
+}
+/* Large screen design (greater than 1024px) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .navbar {
+    padding: 20px;
+  }
+}
+
+/* Medium screen design (from 768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  .navbar {
+    padding: 15px;
+  }
+}
+
+/* Small screen design (less than 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .navbar {
+    padding: 10px;
+    display: block;
+  }
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Responsive Styles for Features Section */
+@media (max-width: 768px) {
+  #features {
+    padding: 20px;
+  }
+
+  #features h2 {
+    font-size: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  input[type="number"],
+  input[type="text"],
+  select,
+  input[type="file"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    width: 100%;
+  }
+}

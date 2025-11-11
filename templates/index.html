@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Diagnosis</title>
+    <link rel="stylesheet" href="./static/ML1.css" />
+    <style>
+      #header {
+        background-image: url(./static/erpitas-zostiras-doctor-1024x846_252863_444169_type13262.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Langue Selector -->
+    <div id="language-selector" class="fade-in">
+      <select id="language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+
+    <!--HOME-->
+    <section id="header" class="fade-in">
+      <div class="content">
+        <h2
+          style="text-transform: uppercase; font-weight: 900"
+          data-translate="welcome-text"
+        >
+          welcome to our website
+        </h2>
+        <br />
+        <h3
+          style="
+            padding-left: 20px;
+            text-transform: capitalize;
+            font-style: italic;
+          "
+          data-translate="quote"
+        >
+          "Together, we make skin health easier to protect."
+        </h3>
+      </div>
+    </section>
+    <nav id="sidenav">
+      <ul>
+        <li><a href="#header" data-translate="home">Home</a></li>
+        <li><a href="#about-us" data-translate="about-us">About Us</a></li>
+        <li><a href="#features" data-translate="form">Form</a></li>
+      </ul>
+    </nav>
+    <img src="./static/home.png" id="menu-botton" class="fade-in" />
+
+    <!--About US-->
+    <section id="about-us" class="fade-in">
+      <div class="about-left">
+        <img
+          src="./static/istockphoto-1321498903-612x612.jpg"
+          class="fade-in"
+        />
+      </div>
+      <div class="about-right">
+        <div class="content1">
+          <h1 style="font-weight: bolder" data-translate="about-heading">
+            About Us
+          </h1>
+          <p data-translate="about-text">
+            Welcome to our Skin Cancer Diagnosis platform. Our goal is to help
+            you take care of your skin by providing a simple and reliable tool
+            to detect potential signs of skin cancer early. With easy-to-use
+            features, we guide you in monitoring your skin and encourage you to
+            seek professional care if needed. Your health matters to us, and we
+            are here to support you every step of the way.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Form Section -->
+    <section id="features" class="fade-in">
+      <h2 data-translate="enter-details">Enter Details for Diagnosis</h2>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="age_approx" data-translate="age">Age Approx:</label>
+          <input
+            type="number"
+            id="age_approx"
+            name="age_approx"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="clin_size_long_diam_mm" data-translate="lesion-size"
+            >Lesion Diameter (mm):</label
+          >
+          <input
+            type="number"
+            id="clin_size_long_diam_mm"
+            name="clin_size_long_diam_mm"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_areaMM2" data-translate="lesion-area"
+            >Area (mm²):</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_areaMM2"
+            name="tbp_lv_areaMM2"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label
+            for="tbp_lv_area_perim_ratio"
+            data-translate="area-perimeter-ratio"
+            >Area Perimeter Ratio:</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_area_perim_ratio"
+            name="tbp_lv_area_perim_ratio"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_color_std_mean" data-translate="color-std"
+            >Color Std Mean:</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_color_std_mean"
+            name="tbp_lv_color_std_mean"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_deltaLBnorm" data-translate="contrast"
+            >Delta LB Norm:</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_deltaLBnorm"
+            name="tbp_lv_deltaLBnorm"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_minorAxisMM" data-translate="minor-diameter"
+            >Minor Axis (mm):</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_minorAxisMM"
+            name="tbp_lv_minorAxisMM"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_nevi_confidence" data-translate="nevi-confidence"
+            >Nevi Confidence:</label
+          >
+          <input
+            type="number"
+            id="tbp_lv_nevi_confidence"
+            name="tbp_lv_nevi_confidence"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="sex" data-translate="sex">Sex:</label>
+          <select id="sex" name="sex" required>
+            <option value="male" data-translate="male">Male</option>
+            <option value="female" data-translate="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="anatom_site_general" data-translate="lesion-location"
+            >Anatom Site:</label
+          >
+          <select id="anatom_site_general" name="anatom_site_general" required>
+            <option value="lower extremity">Lower Extremity</option>
+            <option value="upper extremity">Upper Extremity</option>
+            <option value="torso">Torso</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tbp_tile_type" data-translate="tile-type"
+            >Tile Type:</label
+          >
+          <select id="tbp_tile_type" name="tbp_tile_type" required>
+            <option value="3D: XP">3D: XP</option>
+            <option value="2D: YZ">2D: YZ</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tbp_lv_location" data-translate="lv_location"
+            >Tile Type:</label
+          >
+          <select id="tbp_lv_location" name="tbp_lv_location" required>
+            <option value="lower extremity">Lower Extremity</option>
+            <option value="upper extremity">Upper Extremity</option>
+            <option value="torso">Torso</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="image" data-translate="upload-image">Upload Image:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" data-translate="analyze">Predict</button>
+      </form>
+    </section>
+    <!-- Diagnosis Result Section -->
+    <!-- Result Section -->
+    {% if result %}
+    <section id="result-section" class="fade-in">
+      <h2 data-translate="diagnosis-result">Diagnosis Result</h2>
+      <p id="result-text">Prediction: {{ result }}</p>
+      <p id="probability-text">Probability of Cancer: {{ probability }}</p>
+    </section>
+    {% elif error %}
+    <h2>Error: {{ error }}</h2>
+    {% endif %}
+
+    <!--Footer-->
+    <footer class="fade-in">
+      <p data-translate="footer">&copy; 2024 WSCD. All rights reserved.</p>
+      <p class="footer-quote" data-translate="footer-quote">
+        "Your health, our priority. Committed to delivering the best care and
+        service."
+      </p>
+    </footer>
+    <!--Javascript-->
+    <script>
+      var mb = document.getElementById("menu-botton");
+      var sv = document.getElementById("sidenav");
+      sv.style.right = "-250px";
+      mb.onclick = function () {
+        if (sv.style.right == "-250px") {
+          sv.style.right = "0px";
+        } else {
+          sv.style.right = "-250px";
+        }
+      };
+      function showNextForm() {
+        // Hide the first form
+        document.getElementById("form-part1").style.display = "none";
+
+        // Show the second form
+        document.getElementById("form-part2").style.display = "block";
+      }
+      // Function to go back to the first part of the form
+      function goBack() {
+        // Hide the second form
+        document.getElementById("form-part2").style.display = "none";
+
+        // Show the first form
+        document.getElementById("form-part1").style.display = "block";
+      }
+      const translations = {
+        en: {
+          logo: "WSCD",
+          "welcome-text": "Welcome to our website",
+          quote: '"Together, we make skin health easier to protect."',
+          "enter-details": "Enter Details for Diagnosis",
+          home: "Home",
+          "about-us": "About Us",
+          form: "Form",
+          "about-heading": "About Us",
+          "about-text":
+            "Welcome to our Skin Cancer Diagnosis platform. Our goal is to help you take care of your skin by providing a simple and reliable tool to detect potential signs of skin cancer early. With easy-to-use features, we guide you in monitoring your skin and encourage you to seek professional care if needed. Your health matters to us, and we are here to support you every step of the way.",
+          age: "Age:",
+          sex: "Sex:",
+          male: "Male",
+          female: "Female",
+          "lesion-location": "Lesion Location:",
+          "lesion-size": "Lesion Size (in mm):",
+          duration: "Duration (in weeks):",
+          "pain-level": "Pain Level (1-10):",
+          "upload-image": "Upload Image:",
+          next: "Next",
+          "tile-type": "Tile Type (e.g., 3D: XP):",
+          "lesion-area": "Lesion Area (in mm²):",
+          "area-perimeter-ratio": "Area-Perimeter Ratio:",
+          "color-std": "Color Standard Deviation Mean:",
+          contrast: "Lesion Contrast (inside vs. outside):",
+          "minor-diameter": "Minor Lesion Diameter (in mm):",
+          "nevi-confidence": "Nevus Confidence:",
+          analyze: "Analyze",
+          back: "Back",
+          "diagnosis-result": "Diagnosis Result:",
+          footer: "&copy; 2024 WSCD. All rights reserved.",
+          "footer-quote":
+            '"Your health, our priority. Committed to delivering the best care and service."',
+        },
+        fr: {
+          logo: "WSCD",
+          "welcome-text": "Bienvenue sur notre site",
+          quote:
+            '"Ensemble, nous rendons la santé de la peau plus facile à protéger."',
+          "enter-details": "Entrez les détails pour le diagnostic",
+          home: "Accueil",
+          "about-us": "À propos de nous",
+          form: "Formulaire",
+          "about-heading": "À propos de nous",
+          "about-text":
+            "Bienvenue sur notre plateforme de diagnostic du cancer de la peau. Notre objectif est de vous aider à prendre soin de votre peau en fournissant un outil simple et fiable pour détecter les signes de cancer de la peau dès les premiers stades. Grâce à des fonctionnalités faciles à utiliser, nous vous guidons dans la surveillance de votre peau et vous encourageons à consulter un professionnel de santé si nécessaire. Votre santé est notre priorité, et nous sommes là pour vous soutenir à chaque étape.",
+          age: "Âge:",
+          sex: "Sexe:",
+          male: "Homme",
+          female: "Femme",
+          "lesion-location": "Emplacement de la lésion:",
+          "lesion-size": "Taille de la lésion (en mm):",
+          duration: "Durée (en semaines):",
+          "pain-level": "Niveau de douleur (1-10):",
+          "upload-image": "Télécharger une image:",
+          next: "Suivant",
+          "tile-type": "Type de tuile (ex. 3D: XP):",
+          "lesion-area": "Surface de la lésion (en mm²):",
+          "area-perimeter-ratio": "Rapport surface-périmètre:",
+          "color-std": "Écart-type de couleur moyenne:",
+          contrast: "Contraste de la lésion (intérieur vs extérieur):",
+          "minor-diameter": "Diamètre mineur de la lésion (en mm):",
+          "nevi-confidence": "Confiance du nævus:",
+          analyze: "Analyser",
+          back: "Retour",
+          "diagnosis-result": "Résultat du diagnostic:",
+          footer: "&copy; 2024 WSCD. Tous droits réservés.",
+          "footer-quote":
+            '"Votre santé, notre priorité. Engagés à fournir les meilleurs soins et services."',
+        },
+        ar: {
+          logo: "WSCD",
+          "welcome-text": "مرحباً بكم في موقعنا",
+          quote: '"معاً، نسهّل حماية صحة البشرة."',
+          "enter-details": "أدخل التفاصيل للتشخيص",
+          home: "الرئيسية",
+          "about-us": "معلومات عنا",
+          form: "استمارة",
+          "about-heading": "معلومات عنا",
+          "about-text":
+            "مرحباً بكم في منصتنا لتشخيص سرطان الجلد. هدفنا هو مساعدتك في العناية ببشرتك من خلال توفير أداة بسيطة وموثوقة لاكتشاف علامات سرطان الجلد المبكرة. باستخدام ميزات سهلة الاستخدام، نرشدك في متابعة بشرتك ونشجعك على البحث عن رعاية طبية عند الحاجة. صحتك تهمنا، ونحن هنا لدعمك في كل خطوة.",
+          age: "العمر:",
+          sex: "الجنس:",
+          male: "ذكر",
+          female: "أنثى",
+          "lesion-location": "موقع الآفة:",
+          "lesion-size": "حجم الآفة (بالمليمتر):",
+          duration: "المدة (بالأسابيع):",
+          "pain-level": "مستوى الألم (من 1 إلى 10):",
+          "upload-image": "رفع صورة:",
+          next: "التالي",
+          "tile-type": "نوع البلاط (مثل 3D: XP):",
+          "lesion-area": "مساحة الآفة (بالمليمتر المربع):",
+          "area-perimeter-ratio": "نسبة المساحة إلى المحيط:",
+          "color-std": "متوسط الانحراف المعياري للون:",
+          contrast: "تباين الآفة (الداخل مقابل الخارج):",
+          "minor-diameter": "قطر الآفة الأصغر (بالمليمتر):",
+          "nevi-confidence": "ثقة الشامة:",
+          analyze: "تحليل",
+          back: "رجوع",
+          "diagnosis-result": "نتيجة التشخيص:",
+          footer: "&copy; 2024 WSCD. جميع الحقوق محفوظة.",
+          "footer-quote": '"صحتك أولويتنا. ملتزمون بتقديم أفضل رعاية وخدمات."',
+        },
+      };
+
+      // Traduire le texte basé sur la langue sélectionnée
+      function changeLanguage() {
+        const lang = document.getElementById("language").value;
+        const elements = document.querySelectorAll("[data-translate]");
+
+        // Sauvegarder la langue dans localStorage
+        localStorage.setItem("selectedLanguage", lang);
+
+        elements.forEach((element) => {
+          const key = element.getAttribute("data-translate");
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Changer la direction de l'écriture (RTL ou LTR)
+        if (lang === "ar") {
+          document.body.classList.add("rtl");
+          document.body.classList.remove("ltr");
+        } else {
+          document.body.classList.add("ltr");
+          document.body.classList.remove("rtl");
+        }
+
+        // Réinitialiser et appliquer l'animation après changement de langue
+        resetAnimations();
+        applyFadeIn();
+      }
+
+      // Appliquer l'animation fade-in
+      const applyFadeIn = () => {
+        const elements = document.querySelectorAll(".fade-in");
+
+        elements.forEach((element, index) => {
+          element.style.setProperty("--delay", `${index * 0.2}s`);
+          element.classList.add("fade-in-delay");
+        });
+      };
+
+      // Vérification si une langue a été sauvegardée précédemment
+      window.addEventListener("DOMContentLoaded", () => {
+        // Vérifier si une langue a été sélectionnée précédemment
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+        if (savedLanguage) {
+          // Si une langue est sauvegardée, la restaurer
+          document.getElementById("language").value = savedLanguage;
+          changeLanguage(); // Appliquer la langue sauvegardée
+        }
+
+        // Applique l'animation fade-in au chargement de la page
+        applyFadeIn();
+      });
+    </script>
+  </body>
+</html>
